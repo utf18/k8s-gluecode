@@ -1,7 +1,8 @@
-# k8s-homelab
-Kubernetes Cluster with kubeadm and sprinkles on top for home and lab
+# k8s-gluecode
 
-this repo will install services on top of a running kubernetes cluster from helm templates and kustomize overlays
+this repo will install the services below on top of a running kubernetes cluster from helm templates and kustomize overlays
+
+it glues together helm and kustomize with bash.
 
 ### services:
 - metallb
@@ -40,6 +41,10 @@ your can check e.g. with grafana in the charts dir.
 it will change from grafana.my-domain to grafana.example.com
 
 `./set-domain.sh example.com`
+
+set the dhcp range for the metallb cluster in the file charts/metallb/values.yml on line: 26 and point the A-records or a wildcard to the adresses you specified in your router/firewall.
+
+### deploy the cluster services
 
 create rook persitence
 
