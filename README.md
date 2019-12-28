@@ -66,6 +66,53 @@ deploy them with
 `./deploy-charts.sh`
 
 
+### access the services
+
+you can reach the following services via ingress:
+
+- grafana.your-domain
+
+```
+user: admin
+password: password
+```
+
+- kibana.your-domain
+
+```
+user: elastic
+pw: 
+kubectl -n logging get secret elasticsearch-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode
+```
+- minio.your-domain
+
+```
+accessKey: "AKIAIOSFODNN7EXAMPLE"
+secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
+```
+
+- traefik.your-domain
+
+#### services below are not reachable via ingress and only with port-forwarding
+
+ceph manager dashboard
+go to https://localhost:8443
+```
+kubectl -n rook-ceph port-forward svc/rook-ceph-mgr-dashboard 8443:8443
+```
+```
+user: admin
+pw:
+kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
+
+```
+
+prometheus server dashboard
+go to http://localhost:8080
+```
+kubectl -n monitoring port-forward svc/prometheus-server 8080:80
+```
 
 ### Contributing
 
