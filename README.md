@@ -35,10 +35,11 @@ create the namespaces in the cluster
 
 `./create-namespaces.sh`
 
-set your own domain, because in alle charts it is set to *my-domain*
-it takes the domain as the first argument
-your can check e.g. with grafana in the charts dir.
-it will change from grafana.my-domain to grafana.example.com
+set your own domain, because in all charts it is set to *my-domain*
+
+it takes the domain as the first argument.
+you can check success with e.g. grafana in the charts dir.
+it will change from grafana.my-domain to grafana.example.com in the values.yml
 
 `./set-domain.sh example.com`
 
@@ -46,7 +47,7 @@ set the dhcp range for the metallb cluster in the file charts/metallb/values.yml
 
 ### deploy the cluster services
 
-create rook persitence
+create rook persistence
 
 `./deploy-rook.sh`
 
@@ -54,14 +55,18 @@ create the elasticsearch cluster
 
 `./deploy-eck.sh`
 
-create the other deployments from helm template
+create the other deployments from helm template.
+
 the script will create the *charts-templated* folder and the subdirectories for you
 
 `./create-helm-templates.sh`
 
-deploy the other services with
+deploy them with
 
 `./deploy-charts.sh`
 
+
+
+### Contributing
 
 all contributions are welcome
