@@ -1,0 +1,6 @@
+resources:
+- falco-templated.yml
+namespace: falco
+images:
+- name: docker.io/falcosecurity/falco
+  newName: harbor.cloud.lab/public/docker.io/falcosecurity/falco

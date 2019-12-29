@@ -1,0 +1,6 @@
+resources:
+- metrics-server-templated.yml
+namespace: kube-system
+images:
+- name: gcr.io/google_containers/metrics-server-amd64
+  newName: harbor.cloud.lab/public/gcr.io/google_containers/metrics-server-amd64

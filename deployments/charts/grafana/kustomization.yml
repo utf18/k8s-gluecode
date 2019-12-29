@@ -1,0 +1,10 @@
+resources:
+- grafana-templated.yml
+namespace: monitoring
+images:
+- name: grafana/grafana
+  newName: harbor.cloud.lab/public/grafana/grafana
+- name: busybox
+  newName: harbor.cloud.lab/public/busybox
+- name: kiwigrid/k8s-sidecar
+  newName: harbor.cloud.lab/public/kiwigrid/k8s-sidecar

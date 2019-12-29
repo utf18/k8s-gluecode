@@ -1,0 +1,6 @@
+resources:
+- kube-state-metrics-templated.yml
+namespace: kube-system
+images:
+- name: quay.io/coreos/kube-state-metrics
+  newName: harbor.cloud.lab/public/quay.io/coreos/kube-state-metrics

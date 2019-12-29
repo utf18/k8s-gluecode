@@ -129,7 +129,7 @@ ssl:
   # defaultCN: "example.com"
     # or *.example.com
   defaultSANList:
-    - my-domain
+    - cloud.lab
     # - test1.example.com
   defaultIPList: []
     # - 1.2.3.4
@@ -358,7 +358,7 @@ acme:
     # existingClaim:
 dashboard:
   enabled: true
-  domain: traefik.my-domain
+  domain: traefik.cloud.lab
   # serviceType: ClusterIP
   service: {}
     # annotations:

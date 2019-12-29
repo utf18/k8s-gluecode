@@ -1,0 +1,8 @@
+resources:
+- minio-templated.yml
+namespace: minio
+images:
+- name: minio/minio
+  newName: harbor.cloud.lab/public/minio/minio
+- name: minio/mc
+  newName: harbor.cloud.lab/public/minio/mc

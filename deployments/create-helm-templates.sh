@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # create neccesary folder in charts-templated
-# create kustomization.yml's in each folder
+# cp kustomization.yml's to each folder
 # create helm templates for later use with kustomize in a subfolder for each file
 pushd charts
 for chart in *; do
@@ -28,12 +28,9 @@ for chart in *; do
   # create folder structure
   mkdir -p ../charts-templated/${chart}/base
 
-  # create base kustomization yaml
-  cat << EOF >  ../charts-templated/${chart}/base/kustomization.yml
-resources:
-- ${chart}-templated.yml
-namespace: ${namespace}
-EOF
+  # copy base kustomization yaml
+  cp  ${chart}/kustomization.yml ../charts-templated/${chart}/base/kustomization.yml
+
   # helm template the charts and write them to the created folder structure in charts-templated
   helm template ${chart} --namespace ${namespace} ${chart}/ -f ${chart}/values.yaml > ../charts-templated/${chart}/base/${chart}-templated.yml
 done

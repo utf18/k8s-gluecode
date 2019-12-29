@@ -127,7 +127,7 @@ ingress:
   labels: {}
   path: /
   hosts:
-    - grafana.my-domain
+    - grafana.cloud.lab
   ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
   extraPaths: []
   # - path: /*
@@ -190,7 +190,7 @@ persistence:
   storageClassName: rook-ceph-block
   accessModes:
     - ReadWriteOnce
-  size: 10Gi
+  size: 1Gi
   # annotations: {}
   finalizers:
     - kubernetes.io/pvc-protection

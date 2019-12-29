@@ -23,7 +23,7 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: kibana.my-domain
+  - host: kibana.cloud.lab
     http:
       paths:
       - path: /

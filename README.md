@@ -35,13 +35,19 @@ create the namespaces in the cluster
 
 `./create-namespaces.sh`
 
-set your own domain, because in all charts it is set to *my-domain*
+set your own domain, because in all charts it is set to *cloud.lab*
 
 it takes the domain as the first argument.
 you can check success with e.g. grafana in the charts dir.
-it will change from grafana.my-domain to grafana.example.com in the values.yml
+it will change from grafana.cloud.lab to grafana.example.com in the values.yml
 
 `./set-domain.sh example.com`
+
+i am using a private harbor registry, where i am downloading my docker images to the cluster.
+If you want to use your own, then change harbor.cloud.lab to your linking.
+If you don't have a private registry just execute the script which will remove the prefix and you will download from the internet again, no extra steps required.
+
+`./set-registry-public.sh`
 
 set the dhcp range for the metallb cluster in the file charts/metallb/values.yml on line: 26 and point the A-records or a wildcard to the adresses you specified in your router/firewall.
 

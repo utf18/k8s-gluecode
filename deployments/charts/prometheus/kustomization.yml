@@ -1,0 +1,16 @@
+resources:
+- prometheus-templated.yml
+namespace: monitoring
+images:
+- name: prom/prometheus
+  newName: harbor.cloud.lab/public/prom/prometheus
+- name: prom/pushgateway
+  newName: harbor.cloud.lab/public/prom/pushgateway
+- name: prom/alertmanager
+  newName: harbor.cloud.lab/public/prom/alertmanager
+- name: prom/node-exporter
+  newName: harbor.cloud.lab/public/prom/node-exporter
+- name: jimmidyson/configmap-reload
+  newName: harbor.cloud.lab/public/jimmidyson/configmap-reload
+- name: quay.io/coreos/kube-state-metrics
+  newName: harbor.cloud.lab/public/quay.io/coreos/kube-state-metrics
