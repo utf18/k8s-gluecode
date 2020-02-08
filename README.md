@@ -26,6 +26,7 @@ to be added in the future:
 - kubectl min 1.14 because of kustomize integration
 - helm
 - kubeconfig from target cluster
+- i am using https://github.com/utf18/ansible-kubeadm for the cluster installation
 
 ## getting started
 
@@ -44,7 +45,7 @@ it will change from grafana.cloud.lab to grafana.example.com in the values.yml
 `./set-domain.sh example.com`
 
 i am using a private harbor registry, where i am downloading my docker images to the cluster.
-If you want to use your own, then change harbor.cloud.lab to your linking.
+If you want to use your own, then change harbor.cloud.lab to your liking.
 If you don't have a private registry just execute the script which will remove the prefix and you will download from the internet again, no extra steps required.
 
 `./set-registry-public.sh`
